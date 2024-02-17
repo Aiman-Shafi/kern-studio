@@ -1,5 +1,9 @@
 const tl = gsap.timeline();
 
+tl.from("#hero", {
+  overflow: "auto",
+});
+
 tl.from("h1", {
   opacity: 0,
   duration: 2,
@@ -50,9 +54,18 @@ tl.to(".loader", {
   display: "none",
 });
 
-// tl.to(".black", {
-//   display: "none",
-// });
+gsap.to(".magic-text", {
+  scrollTrigger: {
+    trigger: ".magic-text",
+    start: "top 50%",
+    end: "top 0%",
+    scrub: true,
+    duration: 5,
+  },
+  opacity: 1,
+  marginTop: "20px",
+  scale: 1.2,
+});
 
 const heroImageMovin = () => {
   document.querySelector("h1").addEventListener("mousemove", (e) => {
@@ -75,7 +88,7 @@ gsap.from(".about-links", {
     scrub: true,
   },
   opacity: 0,
-  y: -150,
+  y: -90,
   stagger: 0.2,
   duration: 0.5,
 });
@@ -160,6 +173,29 @@ gsap.from(".dreams h2", {
     scrub: true,
   },
   transform: "scale(0)",
+  duration: 0.8,
+});
+
+gsap.from(".contact", {
+  scrollTrigger: {
+    trigger: ".contact",
+    start: "top 90%",
+    end: "top 10%",
+    scrub: true,
+  },
+  opacity: 0,
+  backgroundColor: "white",
+  duration: 0.8,
+});
+
+gsap.from(".contact-container", {
+  scrollTrigger: {
+    trigger: ".contact-container",
+    start: "top 90%",
+    end: "top 10%",
+    scrub: true,
+  },
+  y: 200,
   duration: 0.8,
 });
 
