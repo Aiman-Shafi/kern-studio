@@ -394,15 +394,15 @@ a {
 }
 
 .right h3 {
-  font-size: 2vw;
-  margin-bottom: 2vw;
+  font-size: 1.5vw;
+  margin-bottom: 1.6vw;
 }
 
 address {
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   letter-spacing: 1.2px;
   font-weight: 100;
-  margin-bottom: 2vw;
+  margin-bottom: 1vw;
 }
 
 .contact h2 {
@@ -455,11 +455,15 @@ address {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.5rem;
+  gap: 1vw;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   max-width: 100%;
   width: 70rem;
   margin: auto;
+}
+
+.project-work ul li img {
+  border: 3px solid black;
 }
 
 figure {

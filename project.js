@@ -17,6 +17,28 @@ tl.from("#projects h1", {
   y: 90,
 });
 
+// creating a new array of project count
+let projectCount = [];
+for (let i = 0; i < 13; i++) {
+  projectCount.push(i);
+}
+
+let projectContainer = document.querySelector(".project-work ul");
+
+// adding project dynamically
+projectCount.slice(2).map((project) => {
+  projectContainer.innerHTML += `
+           <li>
+              <figure>
+                <img
+                  src="assets/projects/${project}.jpg"
+                  alt="kern project ${project}"
+                />
+              </figure>
+            </li>
+            `;
+});
+
 tl.from(".project-work ul li", {
   opacity: 0,
   stagger: 0.1,
