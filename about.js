@@ -35,3 +35,55 @@ tl.from(
   },
   "anim"
 );
+
+let sections = document.querySelectorAll(".fleftelm");
+Shery.imageEffect(".images", {
+  style: 4,
+  scrollSnapping: true,
+  scrollSpeed: 8,
+  touchSpeed: 6,
+  config: { onMouse: { value: 1 } },
+  slideStyle: (setScroll) => {
+    sections.forEach(function (section, index) {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        scrub: 1,
+        onUpdate: function (prog) {
+          setScroll(prog.progress + index);
+        },
+      });
+    });
+  },
+});
+
+gsap.to(".fleftelm", {
+  scrollTrigger: {
+    trigger: "#fimages",
+    pin: true,
+    start: "top top",
+    end: "bottom bottom",
+    endTrigger: ".last",
+    scrub: 1,
+  },
+  y: "-100%",
+  ease: Power1,
+});
+
+Shery.imageEffect(".mask-target", {
+  style: 5, //Select Style
+});
+
+Shery.makeMagnet(".magnet" /* Element to target.*/, {
+  //Parameters are optional.
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 0.5,
+});
+
+Shery.imageMasker(".img-text" /* Element to target.*/, {
+  //Parameters are optional.
+  mouseFollower: true,
+  text: "KERN",
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 1,
+});

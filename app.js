@@ -1,5 +1,9 @@
 const tl = gsap.timeline();
 
+tl.to(".content-section", {
+  display: "none",
+});
+
 tl.from("#hero", {
   overflow: "auto",
 });
@@ -45,9 +49,13 @@ tl.to("h1", {
   duration: 0.5,
 });
 
+tl.to(".content-section", {
+  display: "block",
+});
+
 tl.from("a", {
   opacity: 0,
-  stagger: 0.5,
+  stagger: 0.2,
 });
 
 tl.to(".loader", {
@@ -202,10 +210,6 @@ gsap.from(".contact-container", {
 gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis();
 
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
-
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
@@ -220,11 +224,7 @@ Shery.mouseFollower({
 });
 
 Shery.imageEffect(".mask-target", {
-  style: 2, //Select Style
-  debug: true, // Debug Panel
-  config: {
-    /* Config made from debug panel */
-  },
+  style: 5, //Select Style
 });
 
 Shery.makeMagnet(".magnet" /* Element to target.*/, {
@@ -236,7 +236,7 @@ Shery.makeMagnet(".magnet" /* Element to target.*/, {
 Shery.imageMasker(".img-text" /* Element to target.*/, {
   //Parameters are optional.
   mouseFollower: true,
-  text: "Contact",
+  text: "KERN",
   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
   duration: 1,
 });
