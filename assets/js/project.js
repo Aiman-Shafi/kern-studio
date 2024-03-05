@@ -28,7 +28,7 @@ let plansContainer = document.querySelector(".plans");
 projectCount.slice(2).map((project) => {
   plansContainer.innerHTML += `
         
-              <a href="/assets/images/projects/${project}.jp" data-pswp-width="600"
+              <a href="/assets/images/projects/${project}.jpg" data-pswp-width="600"
               data-pswp-height="600"> 
                 <img
                   src="/assets/images/projects/${project}.jpg"
