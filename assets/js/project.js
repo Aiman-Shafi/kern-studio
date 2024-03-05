@@ -31,7 +31,7 @@ projectCount.slice(2).map((project) => {
            <li>
               <figure>
                 <img
-                  src="assets/projects/${project}.jpg"
+                  src="assets/images/projects/${project}.jpg"
                   alt="kern project ${project}"
                 />
               </figure>
