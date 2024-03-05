@@ -17,7 +17,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="photoswipe/dist/photoswipe.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <!-- Header  -->
@@ -31,17 +32,56 @@
       <section id="projects">
         <h1>Projects</h1>
         <div class="project-work">
-          <ul>
-            <!-- <li>
-              <figure>
-                <img
-                  src="assets/images/architecture.webp"
-                  alt="Volcano and lava field against a stormy sky"
-                />
-                <figcaption>Mountains and volcanos</figcaption>
-              </figure>
-            </li> -->
-          </ul>
+          <div id="my-gallery1">
+            <a
+              data-pswp-width="600"
+              data-pswp-height="600"
+              href="assets/images/Installation_1a.jpg"
+            >
+              <img
+                src="assets/images/Installation_1a.jpg"
+                alt="Volcano and lava field against a stormy sky"
+              />
+            </a>
+            <a
+              data-pswp-width="600"
+              data-pswp-height="600"
+              href="assets/images/Installation_1b.jpg"
+            >
+              <img
+                src="assets/images/Installation_1b.jpg"
+                alt="Volcano and lava field against a stormy sky"
+              />
+            </a>
+            <a
+              data-pswp-width="600"
+              data-pswp-height="600"
+              href="assets/images/Installation_4.jpg"
+            >
+              <img
+                src="assets/images/Installation_4.jpg"
+                alt="Volcano and lava field against a stormy sky"
+              />
+            </a>
+            <a
+              data-pswp-width="600"
+              data-pswp-height="600"
+              href="assets/images/Installation_6.jpg"
+            >
+              <img
+                src="assets/images/Installation_6.jpg"
+                alt="Volcano and lava field against a stormy sky"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h1>Plans</h1>
+        <div class="project-work">
+          <div id="my-gallery1" class="plans">
+            <!-- ...  -->
+          </div>
         </div>
       </section>
     </main>
@@ -96,6 +136,15 @@
       src="https://unpkg.com/sheryjs/dist/Shery.js"
     ></script>
     <!-- Recommended -->
-    <script src="project.js"></script>
+    <script type="module">
+      import PhotoSwipeLightbox from "/photoswipe/dist/photoswipe-lightbox.esm.js";
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: "#my-gallery1",
+        children: "a",
+        pswpModule: () => import("/photoswipe/dist/photoswipe.esm.js"),
+      });
+      lightbox.init();
+    </script>
+    <script src="assets/js/project.js"></script>
   </body>
 </html>

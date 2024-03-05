@@ -1,10 +1,6 @@
 const tl = gsap.timeline();
 
 function heroAnimation() {
-  tl.to(".content-section", {
-    display: "none",
-  });
-
   tl.from("#hero", {
     overflow: "auto",
   });
@@ -49,10 +45,6 @@ function heroAnimation() {
   tl.to("h1", {
     opacity: 1,
     duration: 0.5,
-  });
-
-  tl.to(".content-section", {
-    display: "block",
   });
 
   tl.from("a", {

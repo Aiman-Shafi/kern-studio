@@ -4,8 +4,7 @@ Shery.mouseFollower({
   duration: 0.4,
 });
 
-Shery.makeMagnet(".magnet" /* Element to target.*/, {
-  //Parameters are optional.
+Shery.makeMagnet(".magnet", {
   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
   duration: 0.5,
 });
@@ -23,24 +22,19 @@ for (let i = 0; i < 13; i++) {
   projectCount.push(i);
 }
 
-let projectContainer = document.querySelector(".project-work ul");
+let plansContainer = document.querySelector(".plans");
 
 // adding project dynamically
 projectCount.slice(2).map((project) => {
-  projectContainer.innerHTML += `
-           <li>
-              <figure>
+  plansContainer.innerHTML += `
+        
+              <a href="/assets/images/projects/${project}.jp" data-pswp-width="600"
+              data-pswp-height="600"> 
                 <img
-                  src="assets/images/projects/${project}.jpg"
+                  src="/assets/images/projects/${project}.jpg"
                   alt="kern project ${project}"
                 />
-              </figure>
-            </li>
+              </a>
+        
             `;
-});
-
-tl.from(".project-work ul li", {
-  opacity: 0,
-  stagger: 0.1,
-  y: 50,
 });

@@ -193,7 +193,7 @@ a {
 
 .about-links {
   position: relative;
-  margin-bottom: -30px;
+  /* margin-bottom: -30px; */
 }
 
 .about-links h2 {
@@ -310,15 +310,17 @@ a {
 }
 
 #fright .images {
-  width: 90%;
+  width: 100%;
   height: 90%;
 }
 
 #fright .images img {
+  height: 80vh;
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
+
+/* Dream Section  */
 
 .dreams {
   width: 100%;
@@ -416,6 +418,11 @@ address {
   font-style: italic;
 }
 
+.contact a,
+.contact .right a {
+  color: white;
+}
+
 /* About page */
 
 #about h1 {
@@ -439,107 +446,213 @@ address {
   line-height: 1.4;
 }
 
+/* Project Page  */
+
 #projects h1 {
   text-align: center;
   font-size: 8vw;
   padding: 3vw 0;
 }
 
-.project-work ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+#my-gallery1 {
   display: grid;
-  gap: 1vw;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  max-width: 100%;
+  max-width: 90vw;
+  gap: 1rem;
   width: 70rem;
   margin: auto;
 }
 
-.project-work ul li img {
-  border: 3px solid black;
-}
-
-figure {
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-}
-
-figure::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(0, 0, 0, 0.5);
-  transform-origin: center;
-  opacity: 0;
-  transform: scale(2);
-  transition: opacity 300ms;
-}
-
-figure img {
-  height: 400px !important;
+#my-gallery1 img {
+  height: 500px;
   object-fit: cover;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
-figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  place-items: center;
-  text-align: center;
-  padding: 1rem;
-  color: white;
-  font-size: 1.2rem;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 600ms, transform 600ms;
-}
-
-a:is(:hover, :focus) figure::after {
-  opacity: 1;
-}
-
-a:is(:hover, :focus) figcaption {
-  opacity: 1;
-  transition: opacity 600ms;
+a img {
+  transition: all 0.5s ease;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  figcaption {
-    transform: translate3d(0, 2rem, 0);
-  }
-
-  figure::after {
-    border-radius: 50%;
-    opacity: 1;
-    transform: scale(0);
-    transition: transform 900ms;
-  }
-
-  a:is(:hover, :focus) figure::after {
-    transform: scale(2.5);
-  }
-
-  a:is(:hover, :focus) figcaption {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition: opacity 600ms 400ms, transform 600ms 400ms;
-  }
-
-  a:is(:hover, :focus) img {
-    transform: scale(1.2);
+  a:is(:hover) img {
+    transform: scale(1.1);
   }
 }
 
 .project-work {
   padding-bottom: 5vw;
+}
+
+.team-members-section {
+  display: none;
+}
+
+#about a {
+  margin-top: 3vw;
+  font-size: 1.6vw;
+}
+
+@media (max-width: 600px) {
+  .process {
+    display: none;
+  }
+
+  .about-links h2 {
+    font-size: 10vw;
+    user-select: none;
+    position: relative;
+    z-index: 5;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 4vw;
+    color: black;
+    font-family: "Inter", sans-serif;
+    border-bottom: 1px solid black;
+  }
+
+  .dreams h2 {
+    font-size: 10vw;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right h3 {
+    font-size: 5.5vw;
+    margin: 2.6vw 0;
+    color: #eecc2a;
+  }
+
+  address {
+    font-size: 4.1vw;
+    letter-spacing: 1.2px;
+    font-weight: 100;
+    margin-bottom: 1vw;
+  }
+
+  .contact h2 {
+    font-size: 15vw;
+    color: white;
+    line-height: 1;
+  }
+
+  .contact .right p {
+    margin-top: 2vw;
+  }
+
+  .left p {
+    margin-top: 6vw;
+    margin-left: 1vw;
+    font-style: italic;
+  }
+
+  .contact a,
+  .contact .right a {
+    color: white;
+    font-size: 5vw;
+  }
+
+  .contact {
+    position: relative;
+  }
+
+  .credit {
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    font-size: 3vw;
+    text-align: center;
+    z-index: 999;
+  }
+
+  .hero-magic-text {
+    font-size: 9vw;
+  }
+
+  .h1 {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #hero h1 {
+    font-size: 20vw;
+    line-height: 3rem;
+    color: rgb(255, 255, 255);
+    position: relative;
+  }
+  /* About page */
+
+  #about h1 {
+    font-size: 10vw;
+    margin-top: 2rem;
+  }
+
+  #about a {
+    margin-top: 3vw;
+    font-size: 3.6vw;
+  }
+
+  #about {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 90vw;
+    margin: 0 auto;
+    padding-top: 9vw;
+    gap: 2vw;
+  }
+
+  #about p {
+    font-size: 3.2vw;
+    line-height: 1.4;
+  }
+
+  .team-members-section {
+    display: block;
+    padding: 5vw;
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .team-members-section h2 {
+    margin: 2rem 0;
+    font-size: 10vw;
+    text-decoration: underline;
+  }
+
+  .member h3 {
+    margin: 1rem 0rem;
+    font-size: 7vw;
+  }
+
+  .footer svg {
+    width: 5vw !important;
+  }
+
+  #my-gallery1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    max-width: 90vw;
+    gap: 1rem;
+    width: 70rem;
+    margin: auto;
+  }
+
+  #my-gallery1 img {
+    height: 250px;
+    object-fit: cover;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  }
 }
