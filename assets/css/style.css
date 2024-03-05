@@ -377,13 +377,14 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding: 5vw 10vw;
+  padding: 5vw 1vw;
   background-color: #000000;
   color: white;
 }
 
 .contact-container {
   display: flex;
+  gap: 22vw;
 }
 
 .contact-container > * {
